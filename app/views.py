@@ -23,10 +23,10 @@ def server_error(e: Union[Exception, int]) -> str:
     
 # MPNet
 model = Model(
-    model = AutoModel.from_pretrained('./model', local_files_only=True),
+    model = AutoModel.from_pretrained('./model', local_files_only=False),
         #'sentence-transformers/all-mpnet-base-v2'),
     #, return_token_type_ids=True),
-    tokenizer = AutoTokenizer.from_pretrained('./model', local_files_only=True))
+    tokenizer = AutoTokenizer.from_pretrained('./model', local_files_only=False))
         #'sentence-transformers/all-mpnet-base-v2', use_fast = False))
  
 
