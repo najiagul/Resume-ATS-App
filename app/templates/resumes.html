@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% if dict_result %}
+<table id="resume_table">
+    <tr>
+        <th>File Name</th>
+        <th>Similarity Score</th>
+    </tr>
+    {% for key, value in dict_result.items() %}
+    <tr>
+        <td>{{ key }}</td>
+        <td>{{ value }}</td>
+    </tr>
+    {% endfor %}
+ </table>
+ {% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<h1>Match Resumes with Job Descriptions</h1>
+
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+    <form method="POST" action="/upload" enctype="multipart/form-data">
+
+        <label for="file">Upload your resume</label><br>
+        <input type="file" name="file" multiple><br>
+
+        <label for="job">Upload job description</label><br>
+        <input type="file" name="job"><br>
+
+        <label for="jr">JR Number:</label><br>
+        <input type="text" name="jr"><br>
+
+        <input type="submit">
+    </form>
+{% endblock %}
